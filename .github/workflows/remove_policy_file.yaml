@@ -15,4 +15,10 @@ jobs:
 
       - name: Run Fianu remove command
         run: |
-          bin/fianu console remove example/dbx/exception.yaml
+          fianu console remove example/dbx/exception.yaml
+        
+        env:
+          FIANU_USERNAME: ${{ secrets.FIANU_USERNAME }}
+          FIANU_CLIENT_ID: ${{ secrets.FIANU_CLIENT_ID }}
+          FIANU_CLIENT_SECRET: ${{ secrets.FIANU_CLIENT_SECRET }}
+          FIANU_HOST: ${{ secrets.FIANU_HOST }}
