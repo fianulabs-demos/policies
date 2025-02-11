@@ -1,9 +1,9 @@
 ---
 general:
   policy:
-    name: 'Noah Finalize'
+    name: 'DBX Exception'
     type: exception
-    path: noah.test.exception
+    path: dbx.high.exception
 
 control:
   path: f.ci.github.code_scanning.alerts
