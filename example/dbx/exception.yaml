@@ -10,7 +10,7 @@ control:
 
 policy:
 - criteria:
-    expression: application.appCode == 'DBX'
+    expression: application.appCode == 'dbx'
   policy:
     required: true
     vulnerabilities:
