@@ -13,6 +13,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: setup fianu
+        uses: fianulabs/actions@main
+        with:
+          version: 1.9.36-beta-2
+          
       - name: Run Fianu remove command
         run: |
           fianu console remove example/dbx/exception.yaml
