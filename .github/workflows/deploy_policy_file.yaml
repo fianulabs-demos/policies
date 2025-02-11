@@ -1,0 +1,21 @@
+name: Deploy Policy Exception
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-policy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Run Fianu deploy command
+        env:
+          FIANU_PROJECT: ${{ github.repository_owner }}
+          FIANU_REPOSITORY: ${{ github.event.repository.name }}
+        run: |
+          bin/fianu console deploy example/dbx/exception.yaml
