@@ -1,7 +1,7 @@
 ---
 general:
   policy:
-    name: 'DBX Exception'
+    name: 'dbx-exception'
     type: exception
     path: dbx.high.exception
 
