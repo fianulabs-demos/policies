@@ -10,7 +10,7 @@ control:
 
 policy:
 - criteria:
-    expression: application.appCode == 'dbx'
+    expression: application.name == 'Digital Bank Experience'
   policy:
     required: true
     vulnerabilities:
