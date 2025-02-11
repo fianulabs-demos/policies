@@ -1,10 +1,10 @@
-# Entities as Code
+# Policies
 
 ---
 
 ## Overview
 
-This repository is a demo project that showcases how to deploy **Fianu entities as code** using YAML-based templates. By treating resources as code, they can easily version, manage, and automated with deployments. This repository includes sample YAML files and demonstrates how to deploy them using the following command:
+This repository is a demo project that showcases how to deploy **Fianu YAML-based configuration**. This repository includes sample YAML files and demonstrates how to deploy them using the following command:
 
 ```bash
 fianu console deploy <path to file or directory>
