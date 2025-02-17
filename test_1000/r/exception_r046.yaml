@@ -1,0 +1,31 @@
+---
+general:
+  policy:
+    name: 'Test Exception r046'
+    type: exception
+    path: test.high.exception.r046
+
+control:
+  path: f.ci.github.code_scanning.alerts
+
+policy:
+- criteria:
+    expression: application.name == 'Digital Bank Experience'
+  policy:
+    required: true
+    vulnerabilities:
+      critical:
+        maximum: 0
+        exceptions: []
+      high:
+        maximum: 0
+        exceptions:
+        - go/hardcoded-credentials
+
+expiration:
+  timestamp: '2025-03-01T14:56:01Z'
+
+override:
+  asset:
+    types:
+    - application

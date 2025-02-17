@@ -1,7 +1,12 @@
-name: Deploy Repository
+name: Deploy Policy Exception - Dry Run - Pass
 
 on:
   workflow_dispatch:
+    inputs:
+      path:
+        description: 'Folder path to deploy'
+        required: true
+        default: '*'
 
 jobs:
   deploy-policy:
@@ -13,15 +18,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: setup fianu
+      - name: Setup Fianu
         uses: fianulabs/actions@main
         with:
           version: 1.9.36-beta-5
 
       - name: Run Fianu deploy command
         run: |
-          fianu console deploy good/*
-
+          fianu console deploy "${{ github.event.inputs.path }}"
 
         env:
           FIANU_USERNAME: ${{ secrets.FIANU_USERNAME }}
