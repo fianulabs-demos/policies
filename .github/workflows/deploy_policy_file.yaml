@@ -1,4 +1,4 @@
-name: Deploy Policy Exception
+name: Deploy Policy Exception - Dry Run
 
 on:
   workflow_dispatch:
@@ -16,11 +16,11 @@ jobs:
       - name: setup fianu
         uses: fianulabs/actions@main
         with:
-          version: 1.9.36-beta-2
+          version: 1.9.36-beta-4
 
       - name: Run Fianu deploy command
         run: |
-          fianu console deploy example/dbx/exception.yaml
+          fianu console deploy example/* --dry-run=true
 
 
         env:
