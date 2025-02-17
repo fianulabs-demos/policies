@@ -1,7 +1,9 @@
 ---
 general:
   policy:
-    name: 'DBX Exception'
+    name: 'DBX Exception DryRun'
+    type: exception
+    path: dbx.high.exception.dryrun
 
 control:
   path: f.ci.github.code_scanning.alerts

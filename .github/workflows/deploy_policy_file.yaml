@@ -20,7 +20,7 @@ jobs:
 
       - name: Run Fianu deploy command
         run: |
-          fianu console deploy example/* --dry-run=true
+          fianu console deploy good/dbx/* --dry-run=true
 
 
         env:
