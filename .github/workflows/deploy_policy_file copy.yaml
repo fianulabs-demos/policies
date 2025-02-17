@@ -1,4 +1,4 @@
-name: Deploy Policy Exception - Dry Run - Pass
+name: Deploy Policy Exception - Dry Run - Fail
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Run Fianu deploy command
         run: |
-          fianu console deploy example/* --dry-run=true
+          fianu console deploy bad/* --dry-run=true
 
 
         env:
