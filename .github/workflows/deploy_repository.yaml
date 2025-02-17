@@ -25,7 +25,7 @@ jobs:
 
       - name: Run Fianu deploy command
         run: |
-          fianu console deploy "${{ github.event.inputs.path }}"
+          fianu console deploy "${{ github.event.inputs.path }}" --commits-only=true
 
         env:
           FIANU_USERNAME: ${{ secrets.FIANU_USERNAME }}
