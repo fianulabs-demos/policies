@@ -7,6 +7,14 @@ on:
         description: 'Folder path to deploy'
         required: true
         default: '*'
+      commitsOnly:
+        description: 'Commit only changes'
+        required: false
+        default: true
+      dryRun:
+        description: 'Run in dry run mode'
+        required: false
+        default: false
 
 jobs:
   deploy-policy:
@@ -25,7 +33,7 @@ jobs:
 
       - name: Run Fianu deploy command
         run: |
-          fianu console deploy "${{ github.event.inputs.path }}" --commits-only=true
+          fianu console deploy "${{ github.event.inputs.path }}" --commits-only=${{ github.events.inputs.commitsOnly }} --dry-run=${{ github.events.inputs.dryRun }}
 
         env:
           FIANU_USERNAME: ${{ secrets.FIANU_USERNAME }}
