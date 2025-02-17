@@ -1,4 +1,4 @@
-name: Deploy Policy Exception - Dry Run - Pass
+name: Deploy Repository
 
 on:
   workflow_dispatch:
