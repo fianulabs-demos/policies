@@ -10,8 +10,8 @@ fi
 base_dir="$1"
 
 # Parameters for folder and file creation
-num_folders=20      # Number of subdirectories to create
-files_per_folder=50 # Number of YAML files per subdirectory
+num_folders=5      # Number of subdirectories to create
+files_per_folder=5 # Number of YAML files per subdirectory
 
 # Create the base directory if it doesn't exist
 mkdir -p "$base_dir"
