@@ -20,7 +20,7 @@ jobs:
 
       - name: Run Fianu deploy command
         run: |
-          fianu assets onboard --asset-type repository
+          fianu session start
 
 
         env:
