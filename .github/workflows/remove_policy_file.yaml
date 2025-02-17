@@ -16,7 +16,7 @@ jobs:
       - name: setup fianu
         uses: fianulabs/actions@main
         with:
-          version: 1.9.36-beta-2
+          version: 1.9.36-beta-3
           
       - name: Run Fianu remove command
         run: |
