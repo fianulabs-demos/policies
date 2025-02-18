@@ -1,6 +1,5 @@
 status: draft
 
----
 general:
   policy:
     name: 'Code Coverage'
