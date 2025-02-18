@@ -1,4 +1,4 @@
-name: Deploy Repository
+name: Deploy Policies
 
 on:
   push:
@@ -18,11 +18,11 @@ jobs:
       - name: Setup Fianu
         uses: fianulabs/actions@main
         with:
-          version: ${{ secrets.FIANU_VERSION }}
+          version: 1.9.36-beta-5
 
       - name: Run Fianu deploy command
         run: |
-          fianu console deploy exceptions/* --commits-only=false
+          fianu console deploy "exceptions/*"
 
         env:
           FIANU_USERNAME: ${{ secrets.FIANU_DEMO_USERNAME }}
