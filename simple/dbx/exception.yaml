@@ -11,7 +11,7 @@ control:
 
 policy:
 - criteria:
-    expression: application.name == 'Digital Bank Experience'
+    expression: application.path == 'dbx'
   policy:
     required: true
     vulnerabilities:
