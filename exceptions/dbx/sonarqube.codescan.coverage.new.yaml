@@ -24,7 +24,7 @@ policy:
 
   ## Policy criteria to determine further applicability of the policy
   - criteria:
-      expression: application.path == 'dbx'
+      expression: application.appCode == 'dbx'
     ## Instantiation of the associated control's policy template
     policy:
       required: true

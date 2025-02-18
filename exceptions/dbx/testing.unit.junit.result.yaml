@@ -31,7 +31,7 @@ policy:
 
   # Policy Variation 2
   - criteria: ## Policy criteria to determine further applicability of the policy
-      expression: application.path == 'dbx'
+      expression: application.appCode == 'dbx'
     policy: ## Instantiation of the associated control's policy template
       required: true
       tests:
