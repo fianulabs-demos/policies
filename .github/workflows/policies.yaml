@@ -18,7 +18,7 @@ jobs:
       - name: Setup Fianu
         uses: fianulabs/actions@main
         with:
-          version: 1.9.36-beta-5
+          version: ${{ secrets.FIANU_VERSION }}
 
       - name: Run Fianu deploy command
         run: |
