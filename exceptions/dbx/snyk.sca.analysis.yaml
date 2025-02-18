@@ -6,13 +6,13 @@ status: active
 ## General Information and metadata associated to the policy
 general:
   policy:
-    name: 'Code Coverage'
+    name: 'SCA (Snyk)'
     type: exception
-    path: f.exception.dbx.ci.testing.code.coverage
+    path: f.exception.dbx.snyk.sca.analysis
 
 ## The path of the control to which the policy exception applies
 control:
-  path: ci.testing.code.coverage
+  path: snyk.sca.analysis
 
 ## Array of policy variations
 policy:
@@ -22,13 +22,19 @@ policy:
     ## Instantiation of the associated control's policy template
     policy:
       required: true
-      overall_coverage:
-        minimum: 0.8
+      vulnerabilities:
+        critical:
+          exceptions:
+            - 'SNYK-JAVA-12345'
+          maximum: 0
+        high:
+          exceptions: [ ]
+          maximum: 0
 
 justification:
   ## The justification message for the policy/exception.
   message: |
-    Identified as a false positive.
+    This is a false positive
 
 ## The expiration date and time for the policy exception
 expiration:
