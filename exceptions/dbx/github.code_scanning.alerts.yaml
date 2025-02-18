@@ -1,8 +1,8 @@
-status: draft
+status: active
 
 general:
   policy:
-    name: 'Exception'
+    name: 'DBX CodeQL Exception'
     type: exception
     path: f.ci.github.code_scanning.alerts.high.exception
 
