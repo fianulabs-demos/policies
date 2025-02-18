@@ -1,0 +1,61 @@
+## Status of the policy exception
+## Choices: active, draft
+status: active
+---
+
+## General Information and metadata associated to the policy
+general:
+  policy:
+    name: 'Unit Tests (JUnit)'
+    type: exception
+    path: f.exception.dbx.testing.unit.junit.result
+
+## The path of the control to which the policy exception applies
+control:
+  path: testing.unit.junit.result
+
+## Array of policy variations
+policy:
+  # Policy Variation 1
+  - policy: ## Instantiation of the associated control's policy template
+      required: true
+      tests:
+        error:
+          maximum: 0
+        failed:
+          maximum: 0
+        skipped:
+          maximum: 0
+        total_executed:
+          minimum: 1
+
+  # Policy Variation 2
+  - criteria: ## Policy criteria to determine further applicability of the policy
+      expression: application.path == 'dbx'
+    policy: ## Instantiation of the associated control's policy template
+      required: true
+      tests:
+        error:
+          maximum: 0
+        failed:
+          maximum: 0
+        skipped:
+          maximum: 3
+        total_executed:
+          minimum: 1
+
+justification:
+  ## The justification message for the policy/exception.
+  message: |
+    Legacy Codebase - 3 Skipped tests allowed.
+
+## The expiration date and time for the policy exception
+expiration:
+  timestamp: '2025-03-01T14:56:01Z'
+
+override:
+  asset:
+    ## The abstract asset type(s) to which the policy applies
+    ## Choices: application, artifact, issue, release, version, module, project, repository
+    types:
+      - application
