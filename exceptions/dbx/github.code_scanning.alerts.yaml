@@ -1,0 +1,32 @@
+status: active
+
+general:
+  policy:
+    name: 'Exception'
+    type: exception
+    path: f.ci.github.code_scanning.alerts.high.exception
+
+control:
+  path: f.ci.github.code_scanning.alerts
+
+policy:
+- criteria:
+    expression: application.appCode == 'dbx'
+  policy:
+    required: true
+    vulnerabilities:
+      critical:
+        maximum: 0
+        exceptions: []
+      high:
+        maximum: 0
+        exceptions:
+        - go/hardcoded-credentials
+
+expiration: 
+  timestamp: '2025-03-01T14:56:01Z'
+
+override:
+  asset:
+    types:
+    - application
