@@ -16,6 +16,12 @@ control:
 
 ## Array of policy variations
 policy:
+  ## Instantiation of the associated control's policy template
+  - policy:
+      required: true
+      new_coverage:
+        minimum: 0.9
+
   ## Policy criteria to determine further applicability of the policy
   - criteria:
       expression: application.path == 'dbx'
@@ -28,7 +34,7 @@ policy:
 justification:
   ## The justification message for the policy/exception.
   message: |
-    This is a false positive
+    Legacy Codebase - 80% Coverage allowed.
 
 ## The expiration date and time for the policy exception
 expiration:

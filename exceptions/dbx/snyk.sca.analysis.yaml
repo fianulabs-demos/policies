@@ -34,7 +34,7 @@ policy:
 justification:
   ## The justification message for the policy/exception.
   message: |
-    This is a false positive
+    False Positive Identified: SNYK-JAVA-12345
 
 ## The expiration date and time for the policy exception
 expiration:

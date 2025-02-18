@@ -16,11 +16,8 @@ control:
 
 ## Array of policy variations
 policy:
-  ## Policy criteria to determine further applicability of the policy
-  - criteria:
-      expression: application.path == 'dbx'
-    ## Instantiation of the associated control's policy template
-    policy:
+  # Policy Variation 1
+  - policy: ## Instantiation of the associated control's policy template
       required: true
       tests:
         error:
@@ -32,10 +29,25 @@ policy:
         total_executed:
           minimum: 1
 
+  # Policy Variation 2
+  - criteria: ## Policy criteria to determine further applicability of the policy
+      expression: application.path == 'dbx'
+    policy: ## Instantiation of the associated control's policy template
+      required: true
+      tests:
+        error:
+          maximum: 0
+        failed:
+          maximum: 0
+        skipped:
+          maximum: 3
+        total_executed:
+          minimum: 1
+
 justification:
   ## The justification message for the policy/exception.
   message: |
-    This is a false positive
+    Legacy Codebase - 3 Skipped tests allowed.
 
 ## The expiration date and time for the policy exception
 expiration:
