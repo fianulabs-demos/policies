@@ -1,7 +1,5 @@
-## Status of the policy exception
-## Choices: active, draft
+## Status of the policy exception (Choices: active, draft)
 status: active
----
 
 ## General Information and metadata associated to the policy
 general:
@@ -25,7 +23,7 @@ policy:
       vulnerabilities:
         critical:
           exceptions:
-            - 'SNYK-JAVA-12345'
+            - 'SNYK-MYSQL-12345'
           maximum: 0
         high:
           exceptions: [ ]
@@ -34,7 +32,7 @@ policy:
 justification:
   ## The justification message for the policy/exception.
   message: |
-    False Positive Identified: SNYK-JAVA-12345
+    False Positive Identified: SNYK-MYSQL-12345
 
 ## The expiration date and time for the policy exception
 expiration:

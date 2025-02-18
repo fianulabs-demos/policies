@@ -1,7 +1,5 @@
-## Status of the policy exception
-## Choices: active, draft
+## Status of the policy exception (Choices: active, draft)
 status: active
----
 
 ## General Information and metadata associated to the policy
 general:
@@ -38,7 +36,7 @@ policy:
 justification:
   ## The justification message for the policy/exception.
   message: |
-    Legacy Codebase - 50% Coverage allowed.
+    Legacy Codebase (DBX) - 50% Coverage allowed
 
 ## The expiration date and time for the policy exception.
 expiration:
