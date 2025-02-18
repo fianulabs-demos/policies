@@ -1,6 +1,5 @@
 status: active
 
----
 general:
   policy:
     name: 'Test Exception'
