@@ -1,0 +1,42 @@
+name: Deploy Dev Repository
+
+on:
+  workflow_dispatch:
+    inputs:
+      path:
+        description: 'Folder path to deploy'
+        required: true
+        default: '*'
+      commitsOnly:
+        description: 'Commit only changes'
+        required: false
+        default: true
+      dryRun:
+        description: 'Run in dry run mode'
+        required: false
+        default: false
+
+jobs:
+  deploy-policy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Fianu
+        uses: fianulabs/actions@main
+        with:
+          version: 1.9.36-beta-5
+
+      - name: Run Fianu deploy command
+        run: |
+          fianu console deploy "${{ github.event.inputs.path }}" --commits-only="${{ github.event.inputs.commitsOnly }}" --dry-run="${{ github.event.inputs.dryRun }}"
+
+        env:
+          FIANU_USERNAME: ${{ secrets.FIANU_USERNAME }}
+          FIANU_CLIENT_ID: ${{ secrets.FIANU_CLIENT_ID }}
+          FIANU_CLIENT_SECRET: ${{ secrets.FIANU_CLIENT_SECRET }}
+          FIANU_HOST: ${{ secrets.FIANU_HOST }}
