@@ -1,0 +1,52 @@
+## Status of the policy exception
+## Choices: active, draft
+status: active
+---
+
+## General Information and metadata associated to the policy
+general:
+  policy:
+    name: 'Code Coverage'
+    type: exception
+    path: f.exception.dbx.ci.testing.code.coverage
+
+## The path of the control to which the policy exception applies
+control:
+  path: ci.testing.code.coverage
+
+## Array of policy variations
+policy:
+  ## Instantiation of the associated control's policy template
+  - policy:
+      required: true
+      overall_coverage:
+        minimum: 0.8
+
+  ## Policy criteria to determine further applicability of the policy
+  - criteria:
+      expression: application.path == 'dbx'
+    ## Instantiation of the associated control's policy template
+    policy:
+      required: true
+      overall_coverage:
+        minimum: 0.5
+
+justification:
+  ## The justification message for the policy/exception.
+  message: |
+    Legacy Codebase - 50% Coverage allowed.
+
+## The expiration date and time for the policy exception
+expiration:
+  series:
+  - noteType: attestation
+    entity: 20f907a7-8a78-45b6-828b-50ca31701151
+    id: ec2660f7525f61a457e654f6ac1c00e431c325db
+  asset: a68af6c7-d2f4-4b08-9458-584206305a1d
+
+override:
+  asset:
+    ## The abstract asset type(s) to which the policy applies
+    ## Choices: application, artifact, issue, release, version, module, project, repository
+    types:
+      - application
