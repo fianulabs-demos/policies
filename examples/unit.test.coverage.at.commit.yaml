@@ -36,7 +36,7 @@ justification:
   message: |
     Legacy Codebase - 50% Coverage allowed.
 
-## The expiration date and time for the policy exception
+## The expiration target for the policy exception
 expiration:
   series:
   - noteType: attestation
