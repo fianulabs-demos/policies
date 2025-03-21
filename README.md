@@ -8,8 +8,8 @@ This repository is a demo project that showcases how to deploy **Fianu YAML-base
 
 ```bash
 fianu console deploy <path to file or directory>
-fianu console deploy "simple/*" --commits-only="false" --dry-run="false" --commit aff2131cbdf6e4b5abb4bf78cf08ec4f2ca483eb
-fianu console deploy "simple/*" --repository policies --commits-only="false" --dry-run="false" --commit aff2131cbdf6e4b5abb4bf78cf08ec4f2ca483eb
+fianu console deploy "simple/*" --project fianulabs-demos --repository policies  --commits-only="false" --dry-run="false" --commit aff2131cbdf6e4b5abb4bf78cf08ec4f2ca483eb
+fianu console deploy "simple/*" --project fianulabs-demos --repository policies --commits-only="false" --dry-run="false" --commit aff2131cbdf6e4b5abb4bf78cf08ec4f2ca483eb
 ```
 
 ---
