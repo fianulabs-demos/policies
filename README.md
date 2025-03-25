@@ -40,6 +40,7 @@ Before you begin, ensure you have:
 - [Fianu CLI](https://fianu.example.com) installed on your system.
 - [Git](https://git-scm.com/) for version control.
 - Basic knowledge of YAML and command-line operations.
+- Repository is onboarded to Fianu with `fianu session start` or the `fianu assets onboard` command
 
 ---
 
