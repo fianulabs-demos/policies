@@ -21,7 +21,7 @@ fianu console deploy "simple/*" --project fianulabs-demos --repository policies 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
-- [Workflow Example](#workflow_example)
+- [Workflow Example](#workflow-example)
 
 ---
 
