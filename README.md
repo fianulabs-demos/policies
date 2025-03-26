@@ -21,6 +21,7 @@ fianu console deploy "simple/*" --project fianulabs-demos --repository policies 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
+- [Workflow Example](#workflow_example)
 
 ---
 
@@ -99,3 +100,58 @@ The command will parse the YAML files at the specified path and deploy the entit
 For further assistance, refer to the [Fianu documentation](https://docs.fianu.io/cli) or open an issue with support@fianu.io
 
 ---
+
+## Workflow Example
+
+```yaml
+name: Example - Deploy Repository
+
+on:
+  workflow_dispatch:
+    inputs:
+      path:
+        description: 'Deploy all files in the examples repository'
+        required: true
+        default: "examples/*"
+      commitsOnly:
+        description: 'Deploy only files that were modified/added/deleted as part of the current commit'
+        required: false
+        default: true
+      dryRun:
+        description: 'Deploy in dry-run mode for validation'
+        required: false
+        default: false
+      onboard:
+        description: 'Runs fianu session start to perform automated onboarding / record the session in Fianu -- required for the **first run**'
+        required: false
+        default: true
+
+jobs:
+  consoleDeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Fianu
+        uses: fianulabs/actions@main
+        with:
+          version: ${{ secrets.FIANU_VERSION }}
+
+      - name: Onboard
+        if: github.event.inputs.onboard == 'true'
+        env:
+          FIANU_CLIENT_ID: ${{ secrets.FIANU_CLIENT_ID }}
+          FIANU_CLIENT_SECRET: ${{ secrets.FIANU_CLIENT_SECRET }}
+          FIANU_HOST: ${{ secrets.FIANU_HOST }}
+        run: |
+          fianu session start
+
+      - name: Apply Custom Entities
+        env:
+          FIANU_CLIENT_ID: ${{ secrets.FIANU_CLIENT_ID }}
+          FIANU_CLIENT_SECRET: ${{ secrets.FIANU_CLIENT_SECRET }}
+          FIANU_HOST: ${{ secrets.FIANU_HOST }}
+        run: |
+          fianu console deploy "${{ inputs.path }}" --commits-only="${{ github.event.inputs.commitsOnly }}" --dry-run="${{ github.event.inputs.dryRun }}
+```
