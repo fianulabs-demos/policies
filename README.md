@@ -97,6 +97,9 @@ The command will parse the YAML files at the specified path and deploy the entit
 - **Permission Issues:**  
   Check that you have the required permissions to execute the deployment command.
 
+- **Cause: failed to find commit**
+  Check the workflow file, if triggering on a "pull_request" event, add the flag `--commit=${{ github.event.pull_request.head.sha }}`
+
 For further assistance, refer to the [Fianu documentation](https://docs.fianu.io/cli) or open an issue with support@fianu.io
 
 ---
