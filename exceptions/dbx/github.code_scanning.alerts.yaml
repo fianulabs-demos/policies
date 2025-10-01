@@ -23,6 +23,37 @@ policy:
         exceptions:
         - go/hardcoded-credentials
 
+form:
+  path: dbx.vulnerability.exception.form
+  elements:
+    - name: Manager Approval
+      code: 0
+      type: boolean
+      inputs:
+        boolean: true
+    - name: Justification
+      code: 1
+      type: blob
+      inputs:
+        blob: "This fix is currently under developement.\n\nThere were several resource constraints that limited our ability to address this issue in a timely manner."
+    - name: Ticket ID
+      code: 2
+      type: text
+      inputs:
+        text: RND123456
+    - name: Reason
+      code: 3
+      type: checkbox
+      inputs:
+        selections:
+          - code: 0
+            name: Resource Constraints
+    - name: Estimated Remediation Date
+      code: 4
+      type: text
+      inputs:
+        text: "2050-12-31"
+
 expiration: 
   timestamp: '2025-03-01T14:56:01Z'
 
